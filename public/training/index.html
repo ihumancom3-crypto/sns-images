@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강의 현장 | 주식회사 전인교육</title>
+<meta name="description" content="주식회사 전인교육이 진행한 기업·공공기관 교육 현장 기록입니다. 갈등관리, 리더십, 소통·피드백 과정의 실제 운영 사례를 확인하실 수 있습니다.">
+<meta property="og:title" content="강의 현장 | 주식회사 전인교육">
+<meta property="og:description" content="교육 현장에서 실제로 무슨 일이 있었는지 기록합니다.">
+<meta property="og:image" content="https://sns-images-iota.vercel.app/training/224386952037/cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#131a24; --ink-2:#3d4756;
+    --muted:#6b7686; --line:#e4e8ef; --bg:#ffffff; --bg-soft:#f6f8fb;
+    --accent:#c8912b; --accent-soft:#fdf6e6; --navy:#16305a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Malgun Gothic",sans-serif;
+    line-height:1.75; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+  /* 헤더 */
+  header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);
+         backdrop-filter:blur(8px);position:sticky;top:0;z-index:10}
+  .hd{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{font-weight:900;font-size:17px;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
+  .brand span{color:var(--accent)}
+  .hd nav a{margin-left:20px;font-size:14px;color:var(--muted);text-decoration:none;font-weight:500}
+  .hd nav a:hover{color:var(--ink)}
+
+  /* 히어로 */
+  .hero{padding:64px 0 42px;border-bottom:1px solid var(--line)}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;
+           color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:99px}
+  .hero h1{font-size:40px;line-height:1.28;margin:18px 0 14px;letter-spacing:-.03em;font-weight:900}
+  .hero p{color:var(--ink-2);font-size:16.5px;margin:0;max-width:640px}
+
+  /* 사례 카드 */
+  .cases{padding:52px 0 20px}
+  .sec-title{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--muted);
+             text-transform:uppercase;margin:0 0 18px}
+  article.case{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:34px;
+               background:var(--bg);transition:box-shadow .2s}
+  article.case:hover{box-shadow:0 10px 34px rgba(19,26,36,.09)}
+  .case-cover{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--bg-soft)}
+  .case-body{padding:26px 26px 30px}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .tag{font-size:12px;font-weight:600;padding:5px 10px;border-radius:6px;
+       background:var(--bg-soft);color:var(--ink-2)}
+  .tag.date{background:var(--navy);color:#fff}
+  .case-body h2{font-size:23px;line-height:1.42;margin:0 0 12px;letter-spacing:-.02em;font-weight:700}
+  .case-body p{margin:0 0 14px;color:var(--ink-2);font-size:15.5px}
+
+  blockquote{margin:22px 0;padding:16px 20px;border-left:3px solid var(--accent);
+             background:var(--accent-soft);border-radius:0 10px 10px 0;
+             font-size:15.5px;color:var(--ink);font-weight:500}
+  blockquote small{display:block;margin-top:8px;color:var(--muted);font-weight:400;font-size:13px}
+
+  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:22px 0 8px}
+  .shots img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;background:var(--bg-soft)}
+  .cap{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+
+  .more{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-size:14.5px;
+        font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1.5px solid var(--accent);
+        padding-bottom:2px}
+  .more:hover{color:var(--accent)}
+
+  /* 문의 */
+  .cta{margin:34px 0 70px;padding:34px 30px;border-radius:16px;
+       background:var(--bg-soft);border:1px solid var(--line)}
+  .cta h3{margin:0 0 10px;font-size:19px;font-weight:700;letter-spacing:-.02em}
+  .cta p{margin:0 0 18px;color:var(--ink-2);font-size:15px}
+  .btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;
+       padding:12px 22px;border-radius:9px;font-weight:600;font-size:15px}
+  .btn:hover{background:#0f2444}
+  .tel{margin-left:14px;color:var(--ink-2);font-size:15px;font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:13px}
+
+  @media (max-width:640px){
+    .hero{padding:44px 0 32px}
+    .hero h1{font-size:29px}
+    .case-body{padding:20px 18px 24px}
+    .case-body h2{font-size:19.5px}
+    .hd nav a{margin-left:13px;font-size:13px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <a class="brand" href="/training/">주식회사 전인교육<span>.</span></a>
+    <nav>
+      <a href="#cases">강의 현장</a>
+      <a href="https://meditationhrd.com/contact-us" target="_blank" rel="noopener">교육 문의</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">TRAINING FIELD</span>
+    <h1>강의 현장</h1>
+    <p>교육장에서 실제로 무슨 일이 있었는지 기록합니다.
+       프로그램 소개가 아니라, 그날 리더분들이 무엇을 어려워했고 무엇을 가지고 돌아가셨는지를 남깁니다.</p>
+  </div>
+</section>
+
+<section class="cases wrap" id="cases">
+  <p class="sec-title">교육 진행 사례</p>
+
+  <article class="case">
+    <img class="case-cover" src="/training/224386952037/cover.jpg"
+         alt="갈등관리 과정 현장 — 관계는 지키고 기준은 세우는">
+    <div class="case-body">
+      <div class="meta">
+        <span class="tag date">2026. 08. 20</span>
+        <span class="tag">갈등관리</span>
+        <span class="tag">리더십 · 피드백</span>
+        <span class="tag">2시간 · 2차수</span>
+      </div>
+
+      <h2>관계는 지키고 기준은 세우는 리더의 갈등관리 &amp; 피드백</h2>
+
+      <p>“그 얘기를 꺼내면 관계가 불편해질 것 같아서 그냥 넘어갔어요.”
+         현장 리더분들께 가장 많이 듣는 말입니다. 그런데 넘어간 일은 사라지지 않고,
+         몇 달 뒤 더 커진 채로 돌아옵니다.</p>
+
+      <p>이번 과정은 그 지점을 정면으로 다뤘습니다.
+         감정은 낮추고 문제는 명확하게 다루는 것 — 이 한 줄을 두 덩어리로 나눠 진행했습니다.
+         앞부분은 갈등을 다시 보는 시간, 뒷부분은 관계를 지키면서 기준은 세우는 피드백 대화 실습입니다.</p>
+
+      <blockquote>
+        구성원들과의 갈등으로 많이 힘들었는데, 갈등을 줄이는 피드백이 왜 중요한지 알게 되었습니다.
+        <small>참석 리더 소감</small>
+      </blockquote>
+
+      <div class="shots">
+        <img src="/training/224386952037/illust-01.jpg" alt="감정은 낮추고 기준은 명확하게">
+        <img src="/training/224386952037/photo-01.jpg" alt="조별 토크 진행 장면">
+        <img src="/training/224386952037/photo-02.jpg" alt="2인 1조 롤플레이 실습">
+        <img src="/training/224386952037/photo-03.jpg" alt="피드백 대화 실습">
+        <img src="/training/224386952037/photo-04.jpg" alt="과정 마무리 셀프 인정하기">
+      </div>
+      <p class="cap">현장 사진은 참석자 보호를 위해 얼굴과 명찰을 모두 가려 게시합니다. 고객사명은 표기하지 않습니다.</p>
+
+      <blockquote>
+        전사로 확대되면 큰 도움이 될 것 같습니다.
+        <small>참석 리더 소감</small>
+      </blockquote>
+
+      <a class="more" href="https://blog.naver.com/jadolbo/224386952037" target="_blank" rel="noopener">
+        현장 기록 전문 보기 →
+      </a>
+    </div>
+  </article>
+</section>
+
+<section class="wrap">
+  <div class="cta">
+    <h3>비슷한 고민이 있으신가요?</h3>
+    <p>할 말을 못 하고 넘어가는 리더가 많다 · 피드백만 하면 분위기가 굳는다 ·
+       같은 문제로 반복해서 부딪힌다 · 규정은 있는데 현장에서 안 지켜진다.<br>
+       교육 대상과 인원, 목적에 맞춰 커리큘럼을 설계해 드립니다.</p>
+    <a class="btn" href="https://meditationhrd.com/contact-us" target="_blank" rel="noopener">교육 문의하기</a>
+    <span class="tel">041-736-1256</span>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    주식회사 전인교육 · 교육 문의 041-736-1256<br>
+    현장 사진은 참석자 동의 범위에서 마스킹 처리 후 게시합니다.
+  </div>
+</footer>
+
+</body>
+</html>
